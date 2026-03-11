@@ -31,7 +31,22 @@ public class metodos_Ej5 {
         System.out.println("La temperatura menor es: " + temperaturaMenor(temperaturas));
         System.out.println();
         System.out.println("La media de las temperaturas es " + mediaTemperaturas(temperaturas));
+        System.out.println("La media de las temperaturas sin los extremos es: " + mediaSin(temperaturas));
+    }
 
+    private static double mediaSin(double[] temperaturas) {
+        double sumtotal = 0.0;
+        double sumsin = 0.0;
+        double media = 0.0;
+        for (int i = 0; i < temperaturas.length; i++) {
+            sumtotal += temperaturas[i];
+
+
+        }
+        sumsin = sumtotal - temperaturaMayor(temperaturas) - temperaturaMenor(temperaturas);
+        double mediaRedondeada = sumsin / temperaturas.length-2;
+         mediaRedondeada = Math.round(mediaRedondeada * 100.0) / 100.0;
+        return mediaRedondeada;
     }
 
     private static double mediaTemperaturas(double[] temperaturas) {
@@ -40,8 +55,9 @@ public class metodos_Ej5 {
         for (int i = 0; i < temperaturas.length; i++) {
             totalSumatemperaturas += temperaturas[i];
         }
-        media = totalSumatemperaturas / temperaturas.length;
-        return media;
+        double  mediaRedondeada = totalSumatemperaturas / temperaturas.length;
+        mediaRedondeada = Math.round(mediaRedondeada * 100.0) / 100.0;
+        return mediaRedondeada;
     }
 
     private static void mostrar(double[] temperaturas) {
