@@ -22,6 +22,15 @@ public class operarArrays_Ej15 {
         sumarArrays(arrayA, arrayB);
         producto(arrayA, arrayB);
         prooductoEscalar(arrayA, arrayB);
+        invertirArray(arrayA);
+    }
+
+    private static void invertirArray(int[] arrayA) {
+        for (int i = 0; i < arrayA.length / 2; i++) {
+            int aux = arrayA[i]; // Paso 1: Guardamos el de la izquierdaq
+            arrayA[i] = arrayA[arrayA.length - 1 - i]; // Paso 2: El de la derecha pasa a la izquierda
+            arrayA[arrayA.length - 1 - i] = aux; // Paso 3: El aux pasa a la derecha
+        }
     }
 
     private static int prooductoEscalar(int[] arrayA, int[] arrayB) {
